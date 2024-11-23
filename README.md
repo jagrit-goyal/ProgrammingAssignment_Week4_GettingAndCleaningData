@@ -1,16 +1,7 @@
-Peer-graded Assignment: Getting and Cleaning Data Course Project
-This repository is a Nunno Nugroho submission for Getting and Cleaning Data course project. It has the instructions on how to run analysis on Human Activity recognition dataset.
+Coursera: Getting and Cleaning Data Course Project
 
-Dataset
-Human Activity Recognition Using Smartphones
+In this project, we analyze data from the accelerometer and gyroscope of the Samsung Galaxy S smartphone, collected as part of the Human Activity Recognition Using Smartphones Data Set. The dataset includes sensor measurements from 30 participants aged 19-48, performing six activities: walking, walking upstairs, walking downstairs, sitting, standing, and laying down. The smartphone, worn on the waist, recorded 3-axial linear acceleration and angular velocity at a constant rate of 50Hz. The raw data was preprocessed with noise filters and separated into body and gravity components using a Butterworth low-pass filter, resulting in features computed from time and frequency domains. The data was split into training (70%) and test (30%) sets.
 
-Files
-CodeBook.md a code book that describes the variables, the data, and any transformations or work that I performed to clean up the data
+The objective of this project is to prepare a tidy dataset that is ready for analysis by merging the training and test datasets, extracting key measurements (mean and standard deviation), and applying descriptive activity names. The provided script, run_analysis.R, begins by downloading the data (if not already present) and reads relevant files, including features, activity labels, and training/test datasets. It then merges these datasets and extracts measurements related to mean and standard deviation. Activity codes are replaced with descriptive names (e.g., "WALKING", "SITTING"), and the dataset is labeled with more readable variable names, removing special characters and expanding abbreviations for clarity (e.g., "Acc" to "Accelerometer"). Finally, the script creates a second independent tidy dataset by computing the average of each variable for each activity and subject using the dplyr package. This tidy dataset, consisting of 180 rows (30 subjects × 6 activities) and 81 columns, is saved as tidy_data.txt. The repository includes the R script (run_analysis.R), the final dataset (tidy_data.txt), and a code book (CodeBook.md) describing the data transformations. The analysis can be reproduced by running the script, requiring only the dplyr package for data manipulation.
 
-run_analysis.R performs the data preparation and then followed by the 5 steps required as described in the course project’s definition:
-Merges the training and the test sets to create one data set.
-Extracts only the measurements on the mean and standard deviation for each measurement.
-Uses descriptive activity names to name the activities in the data set
-Appropriately labels the data set with descriptive variable names.
-From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-FinalData.txt is the exported final data after going through all the sequences described above.
+This project demonstrates the process of cleaning and preparing wearable device data, making it ready for future analysis and facilitating the exploration of human activity patterns based on sensor measurements.
